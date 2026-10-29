@@ -1,6 +1,6 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
 
-# Tiny Tapeout Analog Project Template
+# Tiny Tapeout Custom GDS / Analog Project Template
 
 - [Read the documentation for project](docs/info.md)
 
@@ -10,7 +10,13 @@ Tiny Tapeout is an educational project that aims to make it easier and cheaper t
 
 To learn more and get started, visit https://tinytapeout.com.
 
-## Analog projects
+## Custom GDS and analog projects
+
+This template is for projects where you draw the layout yourself (e.g. in Magic or KLayout) and submit the GDS and LEF files, with or without analog pins.
+
+The template targets the IHP SG13CMOS5L PDK by default. To target IHP SG13G2 instead, change `pdk` in [.github/workflows/gds.yaml](.github/workflows/gds.yaml) to `ihp-sg13g2`.
+
+If your design uses analog pins, set `analog_pins` in [info.yaml](info.yaml) and uncomment the `ua` port in [src/project.v](src/project.v). Otherwise, keep `analog_pins: 0` and leave the `ua` port commented out.
 
 For specifications and instructions, see the [analog specs page](https://tinytapeout.com/specs/analog/).
 
